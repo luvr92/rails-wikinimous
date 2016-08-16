@@ -2,7 +2,8 @@
 <p>Find me in app/views/articles/show.html.erb</p>
 
 <h1><%= @article.title %></h1>
-<h2><%= @article.content %></h2>
+<h2><%= Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(@article.content).html_safe %></h2>
+
 
 <!-- link to edit -->
 
@@ -11,3 +12,4 @@
 <!-- link to delete -->
 
 <h3><%= link_to "DELETE ARTICLE", article_path(@article), method: :delete %></h3>
+
