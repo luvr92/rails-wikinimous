@@ -1,0 +1,14 @@
+<h1>Articles#index</h1>
+<p>Find me in app/views/articles/index.html.erb</p>
+
+
+<h3><%= link_to "ADD A NEW ARTICLE", new_article_path %></h3>
+
+<% @articles.each do |article| %>
+  <h2><%= link_to article.title, article_path(article) %></h2>
+  <p><%= article.content %></p>
+<% end %>
+
+
+
+
